@@ -2,6 +2,8 @@
 
 const int MAX_SIZE = 100; // Maximum size of the stack
 
+using namespace std; // Add this line to use the std namespace
+
 class Stack {
 private:
     int top;
@@ -25,7 +27,7 @@ public:
     // Function to push an element onto the stack
     void push(int data) {
         if (isFull()) {
-            std::cout << "Stack is full. Cannot push." << std::endl;
+            cout << "Stack is full. Cannot push." << endl;
             return;
         }
         arr[++top] = data;
@@ -34,7 +36,7 @@ public:
     // Function to pop an element from the stack
     void pop() {
         if (isEmpty()) {
-            std::cout << "Stack is empty. Cannot pop." << std::endl;
+            cout << "Stack is empty. Cannot pop." << endl;
             return;
         }
         --top;
@@ -43,7 +45,7 @@ public:
     // Function to get the top element of the stack (peek)
     int peek() {
         if (isEmpty()) {
-            std::cout << "Stack is empty. Cannot peek." << std::endl;
+            cout << "Stack is empty. Cannot peek." << endl;
             return -1; // Return a default value
         }
         return arr[top];
@@ -53,51 +55,51 @@ public:
 int main() {
     Stack stack;
 
-    std::cout << "Stack operations:" << std::endl;
-    std::cout << "1. Push" << std::endl;
-    std::cout << "2. Pop" << std::endl;
-    std::cout << "3. Peek" << std::endl;
-    std::cout << "4. Is Full" << std::endl;
-    std::cout << "5. Is Empty" << std::endl;
-    std::cout << "6. Quit" << std::endl;
+    cout << "Stack operations:" << endl;
+    cout << "1. Push" << endl;
+    cout << "2. Pop" << endl;
+    cout << "3. Peek" << endl;
+    cout << "4. Is Full" << endl;
+    cout << "5. Is Empty" << endl;
+    cout << "6. Quit" << endl;
 
     int choice, data;
 
     do {
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         switch (choice) {
             case 1:
-                std::cout << "Enter data to push: ";
-                std::cin >> data;
+                cout << "Enter data to push: ";
+                cin >> data;
                 stack.push(data);
                 break;
             case 2:
                 stack.pop();
                 break;
             case 3:
-                std::cout << "Top element: " << stack.peek() << std::endl;
+                cout << "Top element: " << stack.peek() << endl;
                 break;
             case 4:
                 if (stack.isFull()) {
-                    std::cout << "Stack is full." << std::endl;
+                    cout << "Stack is full." << endl;
                 } else {
-                    std::cout << "Stack is not full." << std::endl;
+                    cout << "Stack is not full." << endl;
                 }
                 break;
             case 5:
                 if (stack.isEmpty()) {
-                    std::cout << "Stack is empty." << std::endl;
+                    cout << "Stack is empty." << endl;
                 } else {
-                    std::cout << "Stack is not empty." << std::endl;
+                    cout << "Stack is not empty." << endl;
                 }
                 break;
             case 6:
-                std::cout << "Exiting program." << std::endl;
+                cout << "Exiting program." << endl;
                 break;
             default:
-                std::cout << "Invalid choice. Please try again." << std::endl;
+                cout << "Invalid choice. Please try again." << endl;
         }
     } while (choice != 6);
 
